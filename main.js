@@ -1,5 +1,5 @@
 
-'use strict'
+'use strict';
 
 console.clear();
 
@@ -10,8 +10,8 @@ console.clear();
 
   function getCalendarHead() {
     const dates = [];
-    const d = new Date(year, month,0).getDate();
-    const n = new Date(year,month,1).getDay();
+    const d = new Date(year, month, 0).getDate();
+    const n = new Date(year, month, 1).getDay();
 
     for(let i = 0; i < n; i++) {
        dates.unshift({
@@ -26,7 +26,7 @@ console.clear();
   }
 
   
-  function getCalendarBody(){
+  function getCalendarBody() {
     const dates = [];  //date:日付 day:曜日
     const lastDate = new Date(year,month + 1, 0).getDate();
 
@@ -38,7 +38,7 @@ console.clear();
       });
     }
 
-    if(year === today.getFullYear() && month === today.getMonth()){
+    if(year === today.getFullYear() && month === today.getMonth()) {
 
       dates[today.getDate() - 1].isToday = true;
     }
@@ -50,7 +50,7 @@ console.clear();
     const dates = [];
     const lastDay = new Date(year, month + 1, 0).getDay();
 
-    for (let i = 1; i < 7 - lastDay; i++){
+    for (let i = 1; i < 7 - lastDay; i++) {
       dates.push({
         date: i,
         isToday: false,
@@ -61,7 +61,7 @@ console.clear();
     return dates;
   }
 
-  function clearCalendar(){
+  function clearCalendar() {
     const tbody = document.querySelector('tbody');
 
     while(tbody.firstChild) {
@@ -107,7 +107,7 @@ console.clear();
     });
   }
 
-  function createCalendar(){
+  function createCalendar() {
     
     clearCalendar();
     renderTitle();
